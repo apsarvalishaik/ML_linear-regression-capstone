@@ -23,19 +23,38 @@ Medical insurance costs vary widely across individuals. This project builds a re
 - **BMI interacts with smoking status.** A `bmi × smoker` interaction feature captures a non-linear cost spike for obese smokers, improving model R² significantly.
 - **Age has a steady linear relationship** with charges — each additional year adds roughly $250–$300 in predicted annual cost.
 
-<!-- TODO: Update findings with exact coefficient values after completing Phase 3 -->
+## Coefficient Summary
+
+         Feature  Coefficient
+      bmi_smoker 18608.731140
+          smoker -8570.662519
+             age  3705.216463
+        children   563.530391
+region_southwest  -531.739530
+region_southeast  -426.716078
+region_northwest  -269.379329
+             sex  -262.537886
+             bmi   122.326119
+
 
 ---
 
 ## Model Performance
 
-| Model | RMSE | R² (test set) |
-|---|---|---|
-| Linear Regression (from scratch) | <!-- TODO --> | <!-- TODO --> |
-| Linear Regression (scikit-learn) | <!-- TODO --> | <!-- TODO --> |
-| Linear Regression + interaction feature | <!-- TODO --> | <!-- TODO --> |
+=======================================================
+         FINAL MODEL PERFORMANCE SUMMARY
+=======================================================
+  Dataset         : Medical Cost Personal (n=1,338)
+  Algorithm       : Linear Regression
+  Features used   : 9
+  Train/Test split: 80% / 20%
 
-<!-- TODO: Fill in after completing Phase 4. Expected R² baseline ~0.75–0.78, with interaction feature ~0.84–0.87 -->
+  Metric        From Scratch    Scikit-learn
+  ----------------------------------------
+  MSE          20,914,464.95   20,919,716.75
+  RMSE              4,573.23        4,573.81
+  R²                  0.8653          0.8653
+=======================================================
 
 ---
 
@@ -47,7 +66,7 @@ insurance-cost-predictor/
 ├── data/
 │   └── insurance.csv          # Raw dataset (download from Kaggle)
 │
-├── insurance_cost_predictor.ipynb  # Main notebook (all 5 phases)
+├── medicalinsurance_cost_predictor.ipynb  # Main notebook (all 5 phases)
 │
 └── README.md
 ```
@@ -70,7 +89,7 @@ The notebook is organized into five sections:
 
 **1. Clone the repo**
 ```bash
-git clone https://github.com/<your-username>/insurance-cost-predictor.git
+git clone https://github.com/apsarvalishaik/ML_linear-regression-capstone.git
 cd insurance-cost-predictor
 ```
 
@@ -85,7 +104,7 @@ pip install numpy pandas matplotlib seaborn scikit-learn jupyter
 
 **4. Launch the notebook**
 ```bash
-jupyter notebook insurance_cost_predictor.ipynb
+jupyter notebook medicalinsurance_cost_predictor.ipynb
 ```
 
 ---
